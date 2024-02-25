@@ -100,48 +100,47 @@
       </div>
     </section>
     <script>
-      const plusClick = document.getElementById("plus");
-      plusClick.addEventListener('click', function(){
-        const value = document.getElementById('plusValue').value;
-        const valueNumber = parseFloat(value);
-        const increasedNumber = valueNumber + 1 ;
-        document.getElementById('plusValue').value = increasedNumber;
-        const priceOfPhone = document.getElementById('phonePrice').innerText;
-        const parsepriceOfPhone = parseFloat(priceOfPhone);
-        document.getElementById('phonePrice').innerText = increasedNumber * 1219;
+      
+      document.getElementById("plus").addEventListener('click', function(){
+        const inputBox = document.getElementById('plusValue');
+        const newInputValue = parseInt(inputBox.value);
+        const addedInputValue = newInputValue + 1;
+        inputBox.value = addedInputValue;
+        document.getElementById('phonePrice').innerText = addedInputValue * 1219;
       })
 
-      const plusCaseClick = document.getElementById('casePlus');
-     plusCaseClick.addEventListener('click', function () {
-      const caseQuantity = document.getElementById('caseInput').value;
-      const caseQuantityNumber = parseFloat(caseQuantity);
-      document.getElementById('caseInput').value = caseQuantityNumber + 1;
-      const priceOfCase = document.getElementById('casePrice').innerText;
-      const totalPriceOfCase = (caseQuantityNumber + 1) * 59 ;
-      document.getElementById('casePrice').innerText = totalPriceOfCase;
+     
+
+     document.getElementById('phoneMinus').addEventListener('click', function() {
+      const inputBox = document.getElementById('plusValue');
+      const inputBoxNumber = parseInt(inputBox.value);
+      const newInputBoxValue = inputBoxNumber - 1;
+      inputBox.value = newInputBoxValue ;
+      const totalPrice = newInputBoxValue * 1219;
+      document.getElementById('phonePrice').innerText = totalPrice;
+
+      })
+
+      document.getElementById('minusCaseBtn').addEventListener('click', function () {
+      const caseQuantity = document.getElementById('caseInput');
+      const caseQuantityNumber = parseInt(caseQuantity.value);
+       const newCaseQuantity= caseQuantityNumber - 1;
+       caseQuantity.value = newCaseQuantity;
+       const caseTotal = newCaseQuantity * 59;
+       document.getElementById('casePrice').innerText = caseTotal;
+      
+      })
+
+      document.getElementById('casePlus').addEventListener('click', function () {
+      const caseQuantity = document.getElementById('caseInput');
+      const caseQuantityNumber = parseInt(caseQuantity.value);
+      const totalCaseQuantity = caseQuantityNumber + 1;
+      caseQuantity.value = totalCaseQuantity;
+      const caseTotal = totalCaseQuantity * 59 ;
+      document.getElementById('casePrice').innerText = caseTotal;
+
 
      })
-
-     const minusPhoneQuantity = document.getElementById('phoneMinus');
-     minusPhoneQuantity.addEventListener('click', function() {
-      const inputBox = document.getElementById('plusValue').value;
-      const inputBoxNumber = parseFloat(inputBox);
-      document.getElementById('plusValue').value = inputBoxNumber - 1;
-      const totalPrice = document.getElementById('phonePrice').innerText;
-      const totalPriceNumber = parseFloat(totalPrice);
-      document.getElementById('phonePrice').innerText = totalPriceNumber  - 1219;
-
-      })
-
-      const minusCaseQuantity = document.getElementById('minusCaseBtn');
-      minusCaseQuantity.addEventListener('click', function () {
-       const caseQuantity = document.getElementById('caseInput').value;
-       const caseQuantityNumber = parseFloat(caseQuantity);
-       document.getElementById('caseInput').value = caseQuantityNumber - 1;
-       const priceOfCase = document.getElementById('casePrice').innerText;
-      const totalPriceOfCase = (caseQuantityNumber - 1) * 59 ;
-      document.getElementById('casePrice').innerText = totalPriceOfCase;
-      })
 
 
 
